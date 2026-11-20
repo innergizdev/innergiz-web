@@ -1,0 +1,38 @@
+# dependencies (any level, incl. site-audit/tools)
+node_modules/
+/.pnp
+.pnp.*
+
+# next.js build output
+/.next/
+/out/
+/build
+
+# testing / coverage
+/coverage
+
+# env files (never commit secrets)
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# macOS / editor junk
+.DS_Store
+*.pem
+
+# internal QA snapshots (not part of the app)
+.elev-checks/
+.phase1-checks/
+.phase2-checks/
