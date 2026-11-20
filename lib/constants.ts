@@ -11,6 +11,12 @@ export const SITE = {
   academyUrl: "https://academy.innergiz.com",
 } as const;
 
+// Production origin for absolute URLs (sitemap, Open Graph, canonical links).
+// PLACEHOLDER: set NEXT_PUBLIC_SITE_URL at deploy — the agency fills the real
+// domain here (see .env.example). The fallback is intentionally a placeholder so
+// a wrong/stale origin is never shipped by accident.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com";
+
 // Primary navigation (redesign 2026-09): minimal — About + Services (the
 // "Choose your path" anchor on the landing page). Keeping the list here means
 // Header and Footer never drift apart.

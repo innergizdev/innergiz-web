@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Anton, Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { SITE } from "@/lib/constants";
+import { SITE, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 // The four voices of the design system. Each exposes a CSS
@@ -32,6 +32,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  // Base for resolving relative OG/canonical URLs. Placeholder until the
+  // production domain is set via NEXT_PUBLIC_SITE_URL (see .env.example).
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `${SITE.brandName} — ${SITE.tagline}`,
     template: `%s — ${SITE.brandName}`,
