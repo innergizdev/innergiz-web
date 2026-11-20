@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# CodeRabbit configuration — https://docs.coderabbit.ai/guides/configure-coderabbit
+language: "en-US"
+early_access: false
+
+reviews:
+  # "chill" = constructive, non-blocking tone. Use "assertive" for stricter reviews.
+  profile: "chill"
+  # Don't auto-request changes; keep reviews advisory.
+  request_changes_workflow: false
+  # The PR summary + walkthrough — the main thing you wanted.
+  high_level_summary: true
+  # Skip the whimsical poem for a professional tone.
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    # Don't review draft PRs until they're marked ready.
+    drafts: false
+  # Scope what CodeRabbit looks at. "!" excludes a path.
+  path_filters:
+    - "!site-audit/**"        # scraped HTML, screenshots, audit notes — not code to review
+    - "!public/**"            # static images/logos
+    - "!**/*.lock"
+    - "!package-lock.json"
+
+chat:
+  auto_reply: true
